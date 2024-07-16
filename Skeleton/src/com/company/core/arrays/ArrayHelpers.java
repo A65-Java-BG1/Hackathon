@@ -97,7 +97,12 @@ public class ArrayHelpers {
      */
     public static void copy(int[] sourceArray, int[] destinationArray, int count) {
         for (int i = 0; i < count; i++) {
-            destinationArray[i] = sourceArray[i];
+            if (count >= sourceArray.length) {
+                destinationArray[i] = 0;
+            }
+            else {
+                destinationArray[i] = sourceArray[i];
+            }
         }
     }
 
