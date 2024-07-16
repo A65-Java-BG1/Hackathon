@@ -3,7 +3,26 @@ package com.company.core.strings;
 @SuppressWarnings("StringConcatenationInLoop")
 public class StringHelpers {
 
+    /**
+     * Abbreviates a string using ellipses.
+     *
+     * @param source The string to modify
+     * @param maxLength Maximum length of the resulting string
+     * @return The abbreviated String.
+     *
+     * @author Simon Ankov
+     */
     public static String abbreviate(String source, int maxLength) {
+        if (maxLength >= source.length()){
+            return source;
+        }
+
+        String abbreviation = "";
+
+        for (int i = 0; i < maxLength; i++) {
+
+        }
+
         return null;
     }
 

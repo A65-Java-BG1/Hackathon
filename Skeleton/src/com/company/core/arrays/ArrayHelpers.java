@@ -269,7 +269,10 @@ public class ArrayHelpers {
             reversedArray[indexToAddOn] = arrayToReverse[i];
             indexToAddOn++;
         }
-        arrayToReverse = reversedArray;
+
+        for (int i = 0; i < arrayToReverse.length; i++) {
+            arrayToReverse[i] = reversedArray[i];
+        }
     }
     /**
 
@@ -283,13 +286,20 @@ public class ArrayHelpers {
      */
     public static int[] section(int[] source, int startIndex, int endIndex) {
 
-        int sectionLength = endIndex - startIndex + 1;
-
-        int[] sectionArray = new int[sectionLength];
-
-        for (int i = 0; i < sectionLength; i++) {
-            sectionArray[i] = source[startIndex + i];
+        if (endIndex > source.length - 1){
+            endIndex = source.length - 1;
         }
-        return sectionArray;
+
+        if (source.length > 1 && startIndex >= 0 && startIndex < source.length) {
+            int sectionLength = endIndex - startIndex + 1;
+
+            int[] sectionArray = new int[sectionLength];
+
+            for (int i = 0; i < sectionLength; i++) {
+                sectionArray[i] = source[startIndex + i];
+            }
+            return sectionArray;
+        }
+        return source;
     }
 }
