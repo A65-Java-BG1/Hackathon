@@ -12,23 +12,25 @@ public class ArrayHelpers {
     }
 
     /**
-     * Combines elements from a source array with additional elements and returns a new array
-     * containing all elements.
+     * Adds all elements to the end of source.
      *
-     * @param source the original array to which elements will be added
-     * @param elements additional elements to add to the source array
-     * @return a new array containing all elements from the source array followed by
-     *         additional elements
+     * @param source  int[] - The array to add to
+     * @param elements int - The elements to add
+     * @return A new array, the original array with all elements at the end
      *
      * @author Edis Ismailov
      */
 
     public static int[] addAll(int[] source, int... elements) {
-            int totalLength = source.length + elements.length;
-            int[] result= new int[totalLength];
-            System.arraycopy(source, 0, result, 0, source.length);
-            System.arraycopy(elements, 0, result, source.length, elements.length);
-        return result;
+        int newLength = source.length + elements.length;
+        int[] newArray = new int[newLength];
+        for (int i = 0; i < source.length; i++) {
+            newArray[i] = source[i];
+        }
+        for (int i = 0; i < elements.length; i++) {
+            newArray[source.length + i] = elements[i];
+        }
+        return newArray;
     }
 
     public static boolean contains(int[] source, int element) {
