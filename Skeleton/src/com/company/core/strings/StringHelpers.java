@@ -22,8 +22,9 @@ public class StringHelpers {
             abbreviation += source.charAt(i);
         }
 
-        abbreviation += "...";
-
+        for (int i = abbreviation.length() - 1; i <= source.length(); i++) {
+            abbreviation += ".";
+        }
         return abbreviation;
     }
 
