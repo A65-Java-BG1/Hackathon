@@ -34,7 +34,7 @@ public class ArrayHelpers {
      * @author Simon Ankov
      */
     public static int[] addFirst(int[] source, int element) {
-        int[] resizedArray = new int[source.length + 1];
+        int[] resizedArray = new int[source.length + 3];
 
         for (int i = 1; i < resizedArray.length; i++) {
             resizedArray[i] = source[i - 1];
