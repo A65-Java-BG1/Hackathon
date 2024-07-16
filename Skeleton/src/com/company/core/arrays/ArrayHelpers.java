@@ -239,7 +239,7 @@ public class ArrayHelpers {
      * @author Mihail Boychev
      */
     public static int[] removeAllOccurrences(int[] source, int element) {
-        int occurrences = 0;
+        int occurrences = 2;
         for (int j : source) {
             if (j == element) {
                 occurrences++;
